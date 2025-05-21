@@ -1,0 +1,45 @@
+services:
+  - type: web
+    name: tiket-bus
+    env: docker
+    plan: free
+    region: singapore
+    branch: main
+    dockerfilePath: ./Dockerfile
+    buildCommand: ""
+    startCommand: "php artisan serve --host=0.0.0.0 --port=10000"
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_KEY
+        generateValue: true
+      - key: APP_DEBUG
+        value: false
+      - key: DB_CONNECTION
+        value: mysql
+      - key: DB_HOST
+        fromService:
+          type: mysql
+          name: tiket-bus-db
+          property: host
+      - key: DB_PORT
+        fromService:
+          type: mysql
+          name: tiket-bus-db
+          property: port
+      - key: DB_DATABASE
+        value: tiket_bus_db
+      - key: DB_USERNAME
+        value: root
+      - key: DB_PASSWORD
+        fromService:
+          type: mysql
+          name: tiket-bus-db
+          property: password
+
+databases:
+  - name: tiket-bus-db
+    plan: free
+    region: singapore
+    databaseName: tiket_bus_db
+    user: root
