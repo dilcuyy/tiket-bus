@@ -20,7 +20,7 @@ services:
       - "3306:3306"
     environment:
       MYSQL_DATABASE: tiket_bus_db
-      MYSQL_ROOT_PASSWORD: password_lo
+      MYSQL_ROOT_PASSWORD: dilstaac
     volumes:
       - db_data:/var/lib/mysql
 

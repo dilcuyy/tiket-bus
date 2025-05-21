@@ -1,44 +1,13 @@
-# Laravel / PHP stuff
-/vendor/
-/node_modules/
-
-/.env
-.phpunit.result.cache
-Homestead.json
-Homestead.yaml
-npm-debug.log
-yarn-error.log
-.env.backup
-
-# Laravel storage & cache
+/vendor
+/node_modules
 /storage/*.key
-/storage/*.log
-/storage/debugbar
-/storage/framework/cache/data
-/storage/framework/sessions
-/storage/framework/views
 /storage/logs
-
-# IDE & OS files
-.idea/
-.vscode/
-.DS_Store
-
-# Composer files
-composer.phar
-
-# MacOS files
+/storage/framework
+.env
+.env.*
+*.log
+.idea
+.vscode
 *.DS_Store
-
-# NPM package-lock
-package-lock.json
-yarn.lock
-
-# Misc
-/public/hot
-/public/storage
-/storage/app/public
-
-# Ignore build files (kalo pake frontend build tools)
-public/js/
-public/css/
+*.bak
+*.tmp
